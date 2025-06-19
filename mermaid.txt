@@ -1,0 +1,44 @@
+classDiagram
+%% Classes
+    class Player{
+        -word: String
+        -lives: int
+        -correctGuess : Hashset~Character~
+        -incorrectGuess : Hashset~Character~
+
+        +guessLetter()
+        +getWrongLetter() 
+        +getMaskedWord()
+        +getRemainingLives()
+        +isWordGuessed()
+        +isGameOver()
+    }
+    class Game{
+        wordBank : WordBank
+        leaderboard : Leaderboard
+
+        +gameStart()
+    }
+    class WordBank{
+        -words : Hashset~String~ 
+
+        +getRandomWord()
+    }
+    class PlayerScore{
+        -name : String
+        -score : int
+
+        +compareTo()
+    }
+    class Leaderboard{
+        score : List~PlayerScore~
+        
+        +addScore()
+        +showLeaderBoard()
+    }
+%% Associações
+Game "1" --> "1" Player
+Game *-- "1" WordBank
+Game o-- "1" Leaderboard
+Leaderboard *-- "0..*" PlayerScore
+Player "1" <-- "1" PlayerScore
