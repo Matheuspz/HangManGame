@@ -6,9 +6,9 @@ classDiagram
         -correctGuess : Hashset~Character~
         -incorrectGuess : Hashset~Character~
 
-        +guessLetter()
-        +getWrongLetter() 
+        +guessLetter() 
         +getMaskedWord()
+        +getWrongLetter()
         +getRemainingLives()
         +isWordGuessed()
         +isGameOver()
@@ -22,6 +22,7 @@ classDiagram
     class WordBank{
         -words : Hashset~String~ 
 
+        +addWords()
         +getRandomWord()
     }
     class PlayerScore{
@@ -29,6 +30,7 @@ classDiagram
         -score : int
 
         +compareTo()
+        +toString()
     }
     class Leaderboard{
         score : List~PlayerScore~
