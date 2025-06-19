@@ -1,7 +1,7 @@
 classDiagram
 %% Classes
     class Player{
-        -word: String
+        -wordToGuess: String
         -lives: int
         -correctGuess : Hashset~Character~
         -incorrectGuess : Hashset~Character~
